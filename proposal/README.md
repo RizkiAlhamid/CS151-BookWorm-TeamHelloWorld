@@ -1,17 +1,17 @@
 # Proposal
 
 Project Title:
-  BookWorm: A Contemporary Library Management System
+ - BookWorm: A Contemporary Library Management System
 Members: 
-  Amer Abu Amriah
-  Muhammad Rizki Miftha Alhamid
-  Pratik Bhandari
-  Harun Saib
+ - Amer Abu Amriah
+ - Muhammad Rizki Miftha Alhamid
+ - Pratik Bhandari
+ - Harun Saib
 Team members working on the proposal:
-  Amer Abu Amriah
-  Muhammad Rizki Miftha Alhamid
-  Pratik Bhandari
-  Harun Saib
+ - Amer Abu Amriah
+ - Muhammad Rizki Miftha Alhamid
+ - Pratik Bhandari
+ - Harun Saib
   
 State the problem/issue to resolve 
   Our local library management system faces several challenges, including poor user interface, slow search times, and substandard data organization. These issues result in a lack of efficiency, longer wait times and an overall frustrating user experience. There is a critical need to upgrade and modernize this library management system to enhance the library’s effectiveness and provide a more user-friendly environment. 
