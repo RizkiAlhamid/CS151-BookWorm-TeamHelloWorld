@@ -6,4 +6,4 @@
 
 ## [Use Case Diagram](../diagrams/useCaseDiagram.jpg)
 
-## Sequence Diagram
+## [Sequence Diagram](../diagrams/SequenceDiagram.jpg)
