@@ -1,9 +1,9 @@
 # Diagrams
 
-## [UML Diagram](../diagrams/UMLdiagram)
+## [UML Diagram](../diagrams/UMLdiagram.jpg)
 
 ## State Diagram
 
-## [Use Case Diagram](../diagrams/useCaseDiagram)
+## [Use Case Diagram](../diagrams/useCaseDiagram.jpg)
 
 ## Sequence Diagram
