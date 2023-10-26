@@ -1,8 +1,8 @@
 # CS151-BookWorm-TeamHelloWorld
 
-## [Proposal](../proposal)
+## [Proposal](../main/proposal)
 
-## [Diagrams](../diagrams)
+## [Diagrams](../main/diagrams)
 
 ## Members
 * Amer Abu Amriah
