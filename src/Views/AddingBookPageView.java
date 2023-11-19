@@ -5,14 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SignUpPageView extends JFrame {
-    private JTextField firstNameField;
-    private JTextField lastNameField;
-    private JPasswordField passwordField;
+public class AddingBookPageView extends JFrame {
+    private JTextField bookNameField;
+    private JTextField authorField;
+    private JTextField genreField;
+    //more
+
     private JButton cancelButton;
     private JButton enterButton;
-
-    public SignUpPageView() {
+    public AddingBookPageView() {
         // Set up the JFrame
         setTitle("Sign Up Page");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -20,16 +21,16 @@ public class SignUpPageView extends JFrame {
         setLocationRelativeTo(null);
 
         // Create and configure components
-        JLabel firstNameLabel = new JLabel("Firstname: ");
-        JLabel lastNameLabel = new JLabel("Lastname: ");
-        JLabel passwordLabel = new JLabel("Password: ");
+        JLabel bookNameLabel = new JLabel("Book Name: ");
+        JLabel authorLabel = new JLabel("Author: ");
+        JLabel genreLabel = new JLabel("Genre: ");
 
-        lastNameField = new JTextField(20);
-        firstNameField = new JTextField(20);
-        passwordField = new JPasswordField(20);
+        bookNameField = new JTextField(20);
+        authorField = new JTextField(20);
+        genreField = new JTextField(20);
 
         cancelButton = new JButton("Cancel");
-        // action listener for cancel
+        // Action Listener for cancel button
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,12 +41,12 @@ public class SignUpPageView extends JFrame {
 
         // Create a panel to place all the components
         JPanel panel = new JPanel(new GridLayout(4,2));
-        panel.add(firstNameLabel);
-        panel.add(firstNameField);
-        panel.add(lastNameLabel);
-        panel.add(lastNameField);
-        panel.add(passwordLabel);
-        panel.add(passwordField);
+        panel.add(bookNameLabel);
+        panel.add(bookNameField);
+        panel.add(authorLabel);
+        panel.add(authorField);
+        panel.add(genreLabel);
+        panel.add(genreField);
         panel.add(cancelButton);
         panel.add(enterButton);
         // Add the panel to the frame
@@ -56,13 +57,11 @@ public class SignUpPageView extends JFrame {
     public void setEnterButtonActionListener(ActionListener listener) {
         enterButton.addActionListener(listener);
     }
-    public String getFirstNameValue() {
-        return firstNameField.getText();
+    public String getBookNameValue() {
+        return bookNameField.getText();
     }
-    public String getLastNameValue() {
-        return lastNameField.getText();
+    public String getAuthorValue() {
+        return authorField.getText();
     }
-    public String getPasswordValue() {
-        return new String(passwordField.getPassword());
-    }
+    public String getGenreValue() { return genreField.getText(); }
 }

@@ -2,7 +2,6 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginPageView extends JFrame {
@@ -43,10 +42,10 @@ public class LoginPageView extends JFrame {
         // Make the frame visible
         setVisible(true);
     }
-    public void addLoginButtonActionListener(ActionListener listener) {
+    public void setLoginButtonActionListener(ActionListener listener) {
         loginButton.addActionListener(listener);
     }
-    public void addSignUpButtonActionListener(ActionListener listener) {
+    public void setSignUpButtonActionListener(ActionListener listener) {
         signupButton.addActionListener(listener);
     }
     public String getUserIdValue() {
