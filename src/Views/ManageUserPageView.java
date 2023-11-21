@@ -65,6 +65,15 @@ public class ManageUserPageView extends JFrame {
             addUser(user);
         }
     }
+    public String getSelectedUser() {
+        int selectedRow = usersTable.getSelectedRow();
+        if(selectedRow != -1) {
+            String username = (String) tableModel.getValueAt(selectedRow, 0);
+            return username;
+        } else {
+            return null;
+        }
+    }
     public void setRemoveButtonActionListener(ActionListener listener) {
         removeButton.addActionListener(listener);
     }

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class LoginPageView extends JFrame {
-    private JTextField idNumberField;
+    private JTextField usernameField;
     private JPasswordField passwordField;
     private JButton loginButton;
     private JButton signupButton;
@@ -18,10 +18,10 @@ public class LoginPageView extends JFrame {
         setLocationRelativeTo(null);
 
         // Create and configure components
-        JLabel idNumberLabel = new JLabel("ID Number: ");
+        JLabel usernameLabel = new JLabel("Username: ");
         JLabel passwordLabel = new JLabel("Password: ");
 
-        idNumberField = new JTextField(20);
+        usernameField = new JTextField(20);
         passwordField = new JPasswordField(20);
 
         loginButton = new JButton("Login");
@@ -29,8 +29,8 @@ public class LoginPageView extends JFrame {
 
         // Create a panel to place all the components
         JPanel panel = new JPanel(new GridLayout(4,2));
-        panel.add(idNumberLabel);
-        panel.add(idNumberField);
+        panel.add(usernameLabel);
+        panel.add(usernameField);
         panel.add(passwordLabel);
         panel.add(passwordField);
         panel.add(new JLabel());
@@ -49,7 +49,7 @@ public class LoginPageView extends JFrame {
         signupButton.addActionListener(listener);
     }
     public String getUsernameValue() {
-        return idNumberField.getText();
+        return usernameField.getText();
     }
     public String getPasswordValue() {
         return new String(passwordField.getPassword());

@@ -19,6 +19,10 @@ public class ManageUserPageController {
     private class RemoveButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            String selectedUser = view.getSelectedUser();
+            if(selectedUser != null) {
+                userDatabase.deleteUser(selectedUser);
+            }
             view.removeUser();
         }
     }
