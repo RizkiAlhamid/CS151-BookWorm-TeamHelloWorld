@@ -1,61 +1,57 @@
 package Models;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class User {
-    String username;
-    String firstName;
-    String lastName;
-    String password;
-    ArrayList<Book> rentedBooks = new ArrayList<>();
+    private String firstName;
+    private String lastName;
+    private String username;
+    private String password;
 
-    public ArrayList<Book> getRentedBooks() {
-        return rentedBooks;
-    }
-
-    public User() {
-        username = "RA-1948";
-        firstName = "Rizki";
-        lastName = "Alhamid";
-        password = "SJSU123";
-    }
-
-    public User(String username, String firstName, String lastName, String password) {
-        this.username = username;
+    public User(String firstName, String lastName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.username = generateUsername();
     }
-    public void addRentedBook(Book book) { rentedBooks.add(book); }
-    public void returnBook(Book book) {
-        rentedBooks.remove(book);
+    public User(String firstName, String lastName, String username, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
     }
-    public String getUsername() {
-        return username;
+    public String generateUsername() {
+        // Extract the first letters from the first and last names
+        char firstLetterFirstName = firstName.charAt(0);
+        char firstLetterLastName = lastName.charAt(0);
+        // Generate a random 4-digit number
+        int randomDigits = new Random().nextInt(9000) + 1000;
+        // Create the username by combining the initials and the random digits
+        return String.format("%c%c-%04d", Character.toUpperCase(firstLetterFirstName),
+                Character.toUpperCase(firstLetterLastName), randomDigits);
     }
-
     public String getFirstName() {
         return firstName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {

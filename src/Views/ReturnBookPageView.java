@@ -21,7 +21,7 @@ public class ReturnBookPageView extends JFrame {
         setLocationRelativeTo(null);
 
         // Create a table model with columns: Title, Author, Genre
-        String[] columns = {"Title", "Author", "Genre"};
+        String[] columns = {"Title", "Author","Year", "Genre"};
         tableModel = new DefaultTableModel(columns, 0);
 
         // Create a JTable with the table model
@@ -35,7 +35,7 @@ public class ReturnBookPageView extends JFrame {
         add(scrollPane, BorderLayout.CENTER);
 
         // Create buttons and panel
-        returnButton = new JButton("Rent Book");
+        returnButton = new JButton("Return Book");
         JPanel buttonPanel = new JPanel(new FlowLayout());
 
         // Add buttons to the panel
@@ -47,8 +47,8 @@ public class ReturnBookPageView extends JFrame {
         // Make the frame visible
         setVisible(true);
     }
-    public void addBook(String title, String author, String genre) {
-        tableModel.addRow(new Object[]{title, author, genre});
+    public void addBook(Book book) {
+        tableModel.addRow(new Object[]{book.getTitle(), book.getAuthor(), book.getYear(), book.getGenre()});
     }
     public void returnBook() {
         int selectedRow = booksTable.getSelectedRow();
@@ -60,20 +60,18 @@ public class ReturnBookPageView extends JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public Book getSelectedBookData() {
+    public String getSelectedBookTitle() {
         int selectedRow = booksTable.getSelectedRow();
         if(selectedRow != -1) {
-            String name = (String) tableModel.getValueAt(selectedRow, 0);
-            String author = (String) tableModel.getValueAt(selectedRow, 1);
-            String genre = (String) tableModel.getValueAt(selectedRow, 2);
-            return new Book(name, author, genre);
+            String title = (String) tableModel.getValueAt(selectedRow, 0);
+            return title;
         } else {
             return null;
         }
     }
     public void populateTable(ArrayList<Book> books) {
         for(Book book: books) {
-            addBook(book.getName(), book.getAuthor(), book.getGenre());
+            addBook(book);
         }
     }
     public void setReturnButtonActionListener(ActionListener listener) {

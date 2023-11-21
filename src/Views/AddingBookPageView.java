@@ -9,6 +9,7 @@ public class AddingBookPageView extends JFrame {
     private JTextField bookNameField;
     private JTextField authorField;
     private JTextField genreField;
+    private JTextField yearField;
     //more
 
     private JButton cancelButton;
@@ -24,10 +25,12 @@ public class AddingBookPageView extends JFrame {
         JLabel bookNameLabel = new JLabel("Book Name: ");
         JLabel authorLabel = new JLabel("Author: ");
         JLabel genreLabel = new JLabel("Genre: ");
+        JLabel yearLabel = new JLabel("Year: ");
 
         bookNameField = new JTextField(20);
         authorField = new JTextField(20);
         genreField = new JTextField(20);
+        yearField = new JTextField(20);
 
         cancelButton = new JButton("Cancel");
         // Action Listener for cancel button
@@ -40,11 +43,13 @@ public class AddingBookPageView extends JFrame {
         enterButton = new JButton("Enter");
 
         // Create a panel to place all the components
-        JPanel panel = new JPanel(new GridLayout(4,2));
+        JPanel panel = new JPanel(new GridLayout(5,2));
         panel.add(bookNameLabel);
         panel.add(bookNameField);
         panel.add(authorLabel);
         panel.add(authorField);
+        panel.add(yearLabel);
+        panel.add(yearField);
         panel.add(genreLabel);
         panel.add(genreField);
         panel.add(cancelButton);
@@ -63,5 +68,7 @@ public class AddingBookPageView extends JFrame {
     public String getAuthorValue() {
         return authorField.getText();
     }
+    public String getYearValue() { return yearField.getText(); }
     public String getGenreValue() { return genreField.getText(); }
+
 }

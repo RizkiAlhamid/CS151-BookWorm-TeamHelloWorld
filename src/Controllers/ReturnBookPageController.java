@@ -1,5 +1,7 @@
 package Controllers;
 
+import Database.BookDAO;
+import Database.UserDAO;
 import Models.Book;
 import Models.User;
 import Views.ReturnBookPageView;
@@ -11,22 +13,23 @@ public class ReturnBookPageController {
     private ReturnBookPageView view;
     private User user;
     // ====== Book Database here ======
+    private BookDAO bookDatabase = new BookDAO();
     // ====== User Database here ======
+    private UserDAO userDatabase = new UserDAO();
 
     public ReturnBookPageController(ReturnBookPageView view, User user) {
         this.view = view;
         this.user = user;
         view.setReturnButtonActionListener(new ReturnButtonClickListener());
-        view.populateTable(user.getRentedBooks());
+        view.populateTable(bookDatabase.getAllBooksRentedByUser(user.getUsername()));
     }
     private class ReturnButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Book returnedBook = view.getSelectedBookData();
+            String returnedBook = view.getSelectedBookTitle();
             if(returnedBook != null) {
-                user.returnBook(returnedBook);
                 // ====== Edit the returned book to be available in Book database ======
-                // ====== Remove the returned book from the user in User database ======
+                bookDatabase.returnBook(returnedBook, user.getUsername());
             }
             // remove the book from the table
             view.returnBook();

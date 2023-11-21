@@ -48,7 +48,7 @@ public class LoginPageView extends JFrame {
     public void setSignUpButtonActionListener(ActionListener listener) {
         signupButton.addActionListener(listener);
     }
-    public String getUserIdValue() {
+    public String getUsernameValue() {
         return idNumberField.getText();
     }
     public String getPasswordValue() {

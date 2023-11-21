@@ -1,5 +1,6 @@
 package Controllers;
 
+import Database.UserDAO;
 import Models.User;
 import Views.LibrarianHomePageView;
 import Views.LoginPageView;
@@ -15,6 +16,7 @@ public class LoginPageController {
     private String librarianID = "admin";
     private String librarianPassword = "admin";
     // ======= User Database here ======
+    private UserDAO userDatabase = new UserDAO();
 
     public LoginPageController(LoginPageView view) {
         this.view = view;
@@ -25,20 +27,22 @@ public class LoginPageController {
     private class LoginButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String idNumber = view.getUserIdValue();
+            String username = view.getUsernameValue();
             String password = view.getPasswordValue();
 
             // ====== Login Logic Here ======
-            if(idNumber.equals(librarianID) && password.equals(librarianPassword)) {
+            User foundUser = userDatabase.findUser(username, password);
+            System.out.println(foundUser);
+            if(username.equals(librarianID) && password.equals(librarianPassword)) {
                 JOptionPane.showMessageDialog(view, "Librarian Login");
-                LibrarianHomePageView view = new LibrarianHomePageView();
-                LibrarianHomePageController librarianHomePageController = new LibrarianHomePageController(view);
-                LoginPageController.this.view.dispose();
-            } else if(idNumber.equals("RA-1948") && password.equals("SJSU123")) {
+                LibrarianHomePageView newview = new LibrarianHomePageView();
+                LibrarianHomePageController librarianHomePageController = new LibrarianHomePageController(newview);
+                view.dispose();
+            } else if(foundUser != null) {
                 JOptionPane.showMessageDialog(view, "User Login");
-                User user = new User();
-                UserHomePageView view = new UserHomePageView(user);
-                UserHomePageController controller = new UserHomePageController(view, user);
+                UserHomePageView newview = new UserHomePageView(foundUser);
+                UserHomePageController controller = new UserHomePageController(newview, foundUser);
+                view.dispose();
             } else {
                 JOptionPane.showMessageDialog(view, "Login Failed");
             }

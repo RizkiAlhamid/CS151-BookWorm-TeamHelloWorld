@@ -1,5 +1,6 @@
 package Controllers;
 
+import Database.BookDAO;
 import Models.Book;
 import Views.AddingBookPageView;
 
@@ -10,6 +11,7 @@ public class AddingBookPageController {
     private AddingBookPageView view;
     private ManageBookPageController delegate;
     // ====== Book Database Here ======
+    private BookDAO bookDatabase = new BookDAO();
 
     public AddingBookPageController(AddingBookPageView view, ManageBookPageController delegate) {
         this.view = view;
@@ -21,13 +23,14 @@ public class AddingBookPageController {
         public void actionPerformed(ActionEvent e) {
             String bookName = view.getBookNameValue();
             String author = view.getAuthorValue();
+            int year = Integer.parseInt(view.getYearValue());
             String genre = view.getGenreValue();
-            Book newBook = new Book(bookName, author, genre);
+            Book newBook = new Book(bookName, author, year,genre);
             // ====== Add new book to the database here ======
-
+            bookDatabase.addBook(newBook);
 
             // this add the new book to the table
-            delegate.addBook(bookName, author, genre);
+            delegate.addBook(newBook);
             view.dispose();
         }
     }

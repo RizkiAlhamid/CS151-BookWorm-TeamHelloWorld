@@ -1,5 +1,7 @@
 package Controllers;
 
+import Database.BookDAO;
+import Database.UserDAO;
 import Models.Book;
 import Models.User;
 import Views.RentBookPageView;
@@ -11,7 +13,9 @@ public class RentBookPageController {
     private RentBookPageView view;
     private User user;
     // ====== User Database here ======
+    private UserDAO userDatabase = new UserDAO();
     // ====== Book Database here ======
+    private BookDAO bookDatabase = new BookDAO();
 
     public RentBookPageController(RentBookPageView view, User user) {
         this.view = view;
@@ -19,16 +23,14 @@ public class RentBookPageController {
         view.setRentButtonActionListener(new RentBookButtonClickListener());
 
         // ====== populate the table with available books from database ======
-        //view.populateTable(database.getBooks());
+        view.populateTable(bookDatabase.getAllAvailableBooks());
     }
     private class RentBookButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Book rentedBook = view.getSelectedBookData();
+            String rentedBook = view.getSelectedBookTitle();
             if(rentedBook != null) {
-                user.addRentedBook(rentedBook);
-                // ====== edit the rentedBook to not available in Book database ======
-                // ====== edit user's rented book in User database ======
+                bookDatabase.markBookAsRented(rentedBook, user.getUsername());
             }
             // remove the book from the table
             view.rentBook();

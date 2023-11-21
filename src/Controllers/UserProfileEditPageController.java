@@ -1,5 +1,6 @@
 package Controllers;
 
+import Database.UserDAO;
 import Models.User;
 import Views.UserProfileEditPageView;
 
@@ -10,6 +11,7 @@ public class UserProfileEditPageController {
     private UserProfileEditPageView view;
     private User user;
     // ====== User Database here ======
+    private UserDAO userDatabase = new UserDAO();
 
     public UserProfileEditPageController(UserProfileEditPageView view, User user) {
         this.view = view;
@@ -23,6 +25,7 @@ public class UserProfileEditPageController {
             user.setLastName(view.getLastNameValue());
             user.setPassword(view.getPasswordValue());
             // ======= edit user data in the database ======
+            userDatabase.editUser(user.getUsername(), user);
             view.dispose();
         }
     }

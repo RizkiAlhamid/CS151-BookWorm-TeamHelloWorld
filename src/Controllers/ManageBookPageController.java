@@ -1,5 +1,6 @@
 package Controllers;
 
+import Database.BookDAO;
 import Models.Book;
 import Views.AddingBookPageView;
 import Views.ManageBookPageView;
@@ -11,6 +12,7 @@ public class ManageBookPageController {
     private ManageBookPageView view;
 
     // ====== Book Database Here ======
+    private BookDAO bookDatabase = new BookDAO();
 
     public ManageBookPageController(ManageBookPageView view) {
         this.view = view;
@@ -18,11 +20,10 @@ public class ManageBookPageController {
         view.setRemoveButtonActionListener(new RemoveButtonClickListener());
 
         // ====== populate the table with books from database ======
-        //view.populateTable(database.getBooks());
-
+        view.populateTable(bookDatabase.getAllBooks());
     }
-    public void addBook(String name, String author, String genre) {
-        view.addBook(name, author, genre);
+    public void addBook(Book book) {
+        view.addBook(book);
     }
     private class AddButtonClickListener implements ActionListener {
         @Override
@@ -36,9 +37,10 @@ public class ManageBookPageController {
     private class RemoveButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Book selectedBook = view.getSelectedBookData();
+            String selectedBook = view.getSelectedBookTitle();
             if(selectedBook != null) {
                 // ====== remove the selected book from database here ======
+                bookDatabase.removeBook(selectedBook);
             }
 
             // this removes the book from the table

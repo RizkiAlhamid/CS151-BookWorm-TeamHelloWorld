@@ -1,9 +1,12 @@
 package Views;
 
+import Models.User;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ManageUserPageView extends JFrame {
     private DefaultTableModel tableModel;
@@ -31,11 +34,6 @@ public class ManageUserPageView extends JFrame {
         // Add the table to the frame
         add(scrollPane, BorderLayout.CENTER);
 
-        // Add some users
-        tableModel.addRow(new Object[]{"RA", "Alhamid", "Rizki"});
-        tableModel.addRow(new Object[]{"HS", "Saib", "Harun"});
-        tableModel.addRow(new Object[]{"AA", "Amriah", "Amir"});
-
         // Create buttons and panel
         removeButton = new JButton("Remove User");
         JPanel buttonPanel = new JPanel(new FlowLayout());
@@ -57,6 +55,14 @@ public class ManageUserPageView extends JFrame {
             JOptionPane.showMessageDialog(this,
                     "Please select a user to remove.",
                     "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    public void addUser(User user) {
+        tableModel.addRow(new Object[]{user.getUsername(), user.getLastName(), user.getFirstName()});
+    }
+    public void populateTable(ArrayList<User> users) {
+        for(User user: users) {
+            addUser(user);
         }
     }
     public void setRemoveButtonActionListener(ActionListener listener) {

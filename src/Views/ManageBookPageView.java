@@ -22,7 +22,7 @@ public class ManageBookPageView extends JFrame {
         setLocationRelativeTo(null);
 
         // Create a table model with columns: Title, Author, Genre
-        String[] columns = {"Title", "Author", "Genre"};
+        String[] columns = {"Title", "Author","Year", "Genre", "Availability"};
         tableModel = new DefaultTableModel(columns, 0);
 
         // Create a JTable with the table model
@@ -34,11 +34,6 @@ public class ManageBookPageView extends JFrame {
 
         // Add the table to the frame
         add(scrollPane, BorderLayout.CENTER);
-
-        // Add some books
-        addBook("Calculus 1", "Author 1", "Fiction");
-        addBook("Calculus 2", "Author 2", "Sci-Fi");
-        addBook("Calculus 3", "Author 3", "Education");
 
         // Create buttons and panel
         addButton = new JButton("Add Book");
@@ -55,8 +50,9 @@ public class ManageBookPageView extends JFrame {
         // Make the frame visible
         setVisible(true);
     }
-    public void addBook(String title, String author, String genre) {
-        tableModel.addRow(new Object[]{title, author, genre});
+    public void addBook(Book book) {
+        String availability = book.getRentedBy().equals("None") ? "Available" : "Rented by: " + book.getRentedBy();
+        tableModel.addRow(new Object[]{book.getTitle(), book.getAuthor(), book.getYear(), book.getGenre(), availability});
     }
     public void removeBook() {
         int selectedRow = booksTable.getSelectedRow();
@@ -68,20 +64,18 @@ public class ManageBookPageView extends JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public Book getSelectedBookData() {
+    public String getSelectedBookTitle() {
         int selectedRow = booksTable.getSelectedRow();
         if(selectedRow != -1) {
-            String name = (String) tableModel.getValueAt(selectedRow, 0);
-            String author = (String) tableModel.getValueAt(selectedRow, 1);
-            String genre = (String) tableModel.getValueAt(selectedRow, 2);
-            return new Book(name, author, genre);
+            String title = (String) tableModel.getValueAt(selectedRow, 0);
+            return title;
         } else {
             return null;
         }
     }
     public void populateTable(ArrayList<Book> books) {
         for(Book book: books) {
-            addBook(book.getName(), book.getAuthor(), book.getGenre());
+            addBook(book);
         }
     }
     public void setAddButtonActionListener(ActionListener listener) {
