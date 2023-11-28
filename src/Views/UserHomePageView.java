@@ -11,6 +11,7 @@ public class UserHomePageView extends JFrame {
     private JButton rentBookButton;
     private JButton returnBookButton;
     private User user;
+    public JFrame currentOpenedWindow;
     public UserHomePageView(User user)  {
         this.user = user;
         // Set up the JFrame

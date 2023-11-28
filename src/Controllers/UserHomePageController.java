@@ -30,15 +30,23 @@ public class UserHomePageController {
     private class RentBookButtonActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            RentBookPageView view = new RentBookPageView();
-            RentBookPageController controller = new RentBookPageController(view, user);
+            if(view.currentOpenedWindow != null) {
+                view.currentOpenedWindow.dispose();
+            }
+            RentBookPageView newView = new RentBookPageView();
+            RentBookPageController controller = new RentBookPageController(newView, user);
+            view.currentOpenedWindow = newView;
         }
     }
     private class ReturnBookActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            ReturnBookPageView view = new ReturnBookPageView();
-            ReturnBookPageController controller = new ReturnBookPageController(view, user);
+            if(view.currentOpenedWindow != null) {
+                view.currentOpenedWindow.dispose();
+            }
+            ReturnBookPageView newView = new ReturnBookPageView();
+            ReturnBookPageController controller = new ReturnBookPageController(newView, user);
+            view.currentOpenedWindow = newView;
         }
     }
 }
