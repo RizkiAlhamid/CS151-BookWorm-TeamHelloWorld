@@ -16,7 +16,7 @@ public class AddingBookPageView extends JFrame {
     private JButton enterButton;
     public AddingBookPageView() {
         // Set up the JFrame
-        setTitle("Sign Up Page");
+        setTitle("Adding Book Page");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(300,150);
         setLocationRelativeTo(null);
