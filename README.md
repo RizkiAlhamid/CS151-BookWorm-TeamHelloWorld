@@ -1,14 +1,32 @@
 # CS151-BookWorm-TeamHelloWorld
 
-## [Proposal](../main/proposal)
-
-## [Diagrams](../main/diagrams)
-
 ## Members
 * Amer Abu Amriah
 * Muhammad Rizki Miftha Alhamid
 * Pratik Bhandari
 * Harun Saib
+
+## Team members working on the proposal
+
+## Team members working on the project presentation
+
+## Team members working on the project (code) and report
+
+## Problem/Issue 
+
+## [Diagrams](../main/diagrams)
+
+## [Proposal](../main/proposal)
+
+## Getting Started
+* Clone this project
+```bash
+git clone https://github.com/RizkiAlhamid/CS151-BookWorm-TeamHelloWorld
+```
+* Open the project through your IDE
+* Ensure that the project SDK is set to the installed JDK version.
+* Resolve any dependencies indicated by your IDE.
+* Build the project and run the main.java file
 
 ## App Screenshots
 ### Login Screen
