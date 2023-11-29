@@ -13,7 +13,8 @@
   - Presented the login & signup page
 * ### Harun Saib
   - Presented the database code
-
+* ### Amer Abu Amrieh
+  - Presented the Member page (rent book, edit user, return book)
 ## Team members working on the project (code) and report
 * ### Muhammad Rizki Miftha Alhamid
   - Created the project report on the GitHub repositories 
@@ -27,7 +28,15 @@
   - Created files for reading and writing users and books to local file
   - Created User object file and Book object file for creating instances
   - Created State diagram
- 
+ * ### Amer Abu Amrieh
+  - Created a Sequence Diagram
+  - created the member page
+  - created the rent a book page and view
+  - created the edit user page and view
+  - created the return rented page and view
+  - worked on making exception handling for login and signup page
+  - Jar file for the project
+  
 ## Problem/Issue 
 
 ## [Diagrams](../main/diagrams)
@@ -46,7 +55,7 @@ git clone https://github.com/RizkiAlhamid/CS151-BookWorm-TeamHelloWorld
 * For the librarian access, use:
 ```bash
 username: admin
-password: admin
+password: Admin123@
 ```
 
 ## App Screenshots
