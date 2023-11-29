@@ -11,6 +11,8 @@
 ## Team members working on the project presentation
 * ### Muhammad Rizki Miftha Alhamid
   - Presented the login & signup page
+* ### Harun Saib
+  - Presented the database code
 
 ## Team members working on the project (code) and report
 * ### Muhammad Rizki Miftha Alhamid
@@ -20,7 +22,12 @@
   - Created the librarian pages (home, book management, and user management page)
   - Handled the navigation flow between pages
   - Created the UML and Use Case diagrams
-
+* ### Harun Saib
+  - Created Database models for MVC pattern
+  - Created files for reading and writing users and books to local file
+  - Created User object file and Book object file for creating instances
+  - Created State diagram
+ 
 ## Problem/Issue 
 
 ## [Diagrams](../main/diagrams)
