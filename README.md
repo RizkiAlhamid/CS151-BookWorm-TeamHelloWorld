@@ -16,13 +16,14 @@
   - Presented the database code
 * ### Amer Abu Amrieh
   - Presented the Member page (rent book, edit user, return book)
+* ### Pratik Bhandari
+  - Presented the Librarian page (add book, remove book, remove user)
  
 ## Team members working on the project (code) and report
 * ### Muhammad Rizki Miftha Alhamid
   - Created the project report on the GitHub repositories 
   - Structured the code using MVC pattern
   - Created the login & signup page
-  - Created the librarian pages (home, book management, and user management page)
   - Handled the navigation flow between pages
   - Created the UML and Use Case diagrams
 * ### Harun Saib
@@ -38,6 +39,11 @@
   - created the return rented page and view
   - worked on making exception handling for login and signup page
   - Jar file for the project
+* ### Pratik Bhandari
+  - Created the librarian view page
+  - Created the add book form
+  - Created the view book table with remove button
+  - Created the view user table with remove button
   
 ## Problem/Issue 
 
