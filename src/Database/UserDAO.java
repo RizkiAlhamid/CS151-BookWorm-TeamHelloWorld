@@ -79,7 +79,6 @@ public class UserDAO {
     }
     public User findUser(String username, String password) {
         List<User> users = getAllUsers();
-        System.out.println(users.get(0).getUsername());
         for (User user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return user;
