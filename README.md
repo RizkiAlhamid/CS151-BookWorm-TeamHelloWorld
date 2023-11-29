@@ -7,6 +7,7 @@
 * Harun Saib
 
 ## Team members working on the proposal
+* ### Pratik Bhandari
 
 ## Team members working on the project presentation
 * ### Muhammad Rizki Miftha Alhamid
@@ -15,6 +16,7 @@
   - Presented the database code
 * ### Amer Abu Amrieh
   - Presented the Member page (rent book, edit user, return book)
+ 
 ## Team members working on the project (code) and report
 * ### Muhammad Rizki Miftha Alhamid
   - Created the project report on the GitHub repositories 
