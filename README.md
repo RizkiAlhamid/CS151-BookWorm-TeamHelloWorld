@@ -14,11 +14,12 @@
 
 ## Team members working on the project (code) and report
 * ### Muhammad Rizki Miftha Alhamid
-  - Create the project report on the GitHub repositories 
-  - Structure the code using MVC pattern
-  - Create the login & signup page
-  - Create the librarian pages (home, book management, and user management page)
-  - Handle the navigation flow between pages
+  - Created the project report on the GitHub repositories 
+  - Structured the code using MVC pattern
+  - Created the login & signup page
+  - Created the librarian pages (home, book management, and user management page)
+  - Handled the navigation flow between pages
+  - Created the UML and Use Case diagrams
 
 ## Problem/Issue 
 
