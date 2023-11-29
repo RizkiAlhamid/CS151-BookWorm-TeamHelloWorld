@@ -45,7 +45,8 @@
   - Created the view book table with remove button
   - Created the view user table with remove button
   
-## Problem/Issue 
+## Problem/Issues
+  - Jar file is able to read txt files but not write to them
 
 ## [Diagrams](../main/diagrams)
 
