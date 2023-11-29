@@ -28,7 +28,7 @@
   - Created files for reading and writing users and books to local file
   - Created User object file and Book object file for creating instances
   - Created State diagram
- * ### Amer Abu Amrieh
+* ### Amer Abu Amrieh
   - Created a Sequence Diagram
   - created the member page
   - created the rent a book page and view
