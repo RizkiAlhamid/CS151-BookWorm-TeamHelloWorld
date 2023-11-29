@@ -1,10 +1,10 @@
 # CS151-BookWorm-TeamHelloWorld
 
 ## Members
-* ### Amer Abu Amriah
-* ### Muhammad Rizki Miftha Alhamid
-* ### Pratik Bhandari
-* ### Harun Saib
+* Amer Abu Amriah
+* Muhammad Rizki Miftha Alhamid
+* Pratik Bhandari
+* Harun Saib
 
 ## Team members working on the proposal
 
